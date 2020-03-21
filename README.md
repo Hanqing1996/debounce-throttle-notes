@@ -3,7 +3,7 @@
 
 > 侧重用户操作
 
-#### 【面试】写一个函数防抖封装函数
+#### 【面试】写一个防抖封装函数
 ```
 function debounce(fn, wait) {
     let timer = null
@@ -65,7 +65,7 @@ document.body.onscroll = () => {
 }
 ```
 
-#### 【面试】写一个函数节流封装函数
+#### 【面试】写一个节流封装函数
 ```
 function throttle(fn, gapTime) {
     let lastTime = null
