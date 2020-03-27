@@ -89,3 +89,4 @@ document.body.onscroll = fn
 * 比如每隔一定时间保存一次用户在 input 中输入的内容。
 * 游戏中的刷新率
 * DOM元素拖拽
+* 验证码
