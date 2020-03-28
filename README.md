@@ -42,7 +42,10 @@ const onScrollContent= (e) => {
 ```
 * 搜索框提示内容的请求展示
 * 输入框在用户输入完毕后再验证输入内容格式
-* 给按钮加函数防抖防止表单多次提交。
+* 给按钮加函数防抖防止表单多次提交。(即sb用户在提交时连续点好几次提交按钮)
+```
+
+```
 
 #### 哪些情况不应该用防抖
 * 比如我们需要制作一个 sticky 组件：在 scroll 期间某元素距离窗口顶端固定距离。由于动作只发生在 scroll 期间，所以不应该用防抖。
@@ -89,4 +92,18 @@ document.body.onscroll = fn
 * 比如每隔一定时间保存一次用户在 input 中输入的内容。
 * 游戏中的刷新率
 * DOM元素拖拽
-* 验证码
+* 验证码已发送，则指定时间间隔内再次点击无效
+```
+if (this.countdown !== 60) return
+else{
+    this.$fetch('getCode', {username: this.userName}).then((res: any) => {
+        this.timer = setInterval(() => {
+            this.countdown--
+            if (this.countdown === 0) {
+                clearInterval(this.timer)
+                this.countdown = 60
+            }
+        }, 1000)
+    })
+}
+```
